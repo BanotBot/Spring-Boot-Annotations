@@ -3,11 +3,12 @@ package dev.fluhongprogrammer.springannotations.service;
 import org.springframework.stereotype.Component;
 
 @Component
-public class VegPizza implements Pizza
+public class IvanPizza implements Pizza
 {
-
+    @Override
     public String getPizza()
     {
-        return "Veg Pizza";
+        return "Ivan Pizza";
     }
+
 }

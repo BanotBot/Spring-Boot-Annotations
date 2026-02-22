@@ -1,15 +1,25 @@
 package dev.fluhongprogrammer.springannotations.controller;
 
-import dev.fluhongprogrammer.springannotations.service.VegPizza;
+import dev.fluhongprogrammer.springannotations.service.Pizza;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("pizzaController")
-public class PizzaController
+public class PizzaController implements Pizza
 {
 
+    private final  Pizza pizza;
+
+    //  ivanPizza - name of the file
+    //  @Qualifier("name") matches: - The bean name registered in the Spring container
     @Autowired
-    private VegPizza vegPizza;
+    public PizzaController(@Qualifier("ivanPizza") Pizza pizza) {
+        this.pizza = pizza;
+    }
+
+    //    @Autowired
+//    private VegPizza vegPizza;
 
 //    @Autowired
 //    public PizzaController(VegPizza vegPizza)
@@ -22,8 +32,9 @@ public class PizzaController
 //        this.vegPizza = vegPizza;
 //    }
 
+    @Override
     public String getPizza()
     {
-        return vegPizza.getPizza();
+        return pizza.getPizza();
     }
 }
