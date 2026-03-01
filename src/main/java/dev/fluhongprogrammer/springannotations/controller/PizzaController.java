@@ -19,22 +19,32 @@ public class PizzaController implements Pizza
     }
 
     //    @Autowired
-//    private VegPizza vegPizza;
+    //    private VegPizza vegPizza;
 
-//    @Autowired
-//    public PizzaController(VegPizza vegPizza)
-//    {
-//         this.vegPizza = vegPizza;
-//    }
+    //    @Autowired
+    //    public PizzaController(VegPizza vegPizza)
+    //    {
+    //         this.vegPizza = vegPizza;
+    //    }
 
-//    @Autowired
-//    public void setVegPizza(VegPizza vegPizza) {
-//        this.vegPizza = vegPizza;
-//    }
+    //    @Autowired
+    //    public void setVegPizza(VegPizza vegPizza) {
+    //        this.vegPizza = vegPizza;
+    //    }
 
     @Override
     public String getPizza()
     {
         return pizza.getPizza();
+    }
+
+    public void init()
+    {
+        System.out.println("Init initialization");
+    }
+
+    public void destroy()
+    {
+        System.out.println("Destroy initialization");
     }
 }

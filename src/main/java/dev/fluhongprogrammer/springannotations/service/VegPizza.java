@@ -2,7 +2,7 @@ package dev.fluhongprogrammer.springannotations.service;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class VegPizza implements Pizza
 {
 
