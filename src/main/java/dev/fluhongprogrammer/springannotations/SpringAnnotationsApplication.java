@@ -1,8 +1,11 @@
 package dev.fluhongprogrammer.springannotations;
 
 import dev.fluhongprogrammer.springannotations.config.AppConfig;
+import dev.fluhongprogrammer.springannotations.controller.MyController;
 import dev.fluhongprogrammer.springannotations.controller.PizzaController;
 import dev.fluhongprogrammer.springannotations.controller.UserController;
+import dev.fluhongprogrammer.springannotations.repository.MyRepository;
+import dev.fluhongprogrammer.springannotations.service.MyService;
 import dev.fluhongprogrammer.springannotations.service.VegPizza;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -32,6 +35,14 @@ public class SpringAnnotationsApplication
 //		System.out.println(vegPizza.getPizza());
 
 
+		MyController mycontroller = (MyController) context.getBean("myController");
+		System.out.println(mycontroller.hello());
+
+		MyService myService = context.getBean(MyService.class);
+		System.out.println(myService.hello());
+
+		MyRepository myrepository = context.getBean(MyRepository.class);
+		System.out.println(myrepository.hello());
 	}
 
 }
